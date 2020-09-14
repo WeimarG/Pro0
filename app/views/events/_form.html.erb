@@ -1,0 +1,45 @@
+<%= form_with(model: @event, local: true) do |form| %>
+<div class="small-container center-block">
+
+<div class="field"> 
+    <%=form.label :nombre %>
+    <%=form.text_field :name %>
+</div>
+
+<div class="field">
+    <%=form.label :categoria %>
+    <%=select_tag :category, raw('<option value="1">Conferencia</option><option value="2">Seminario</option><option value="3">Congreso</option><option value="4">Curso</option>') %>
+</div>
+
+<div class="field">
+    <%=form.label :lugar %>
+    <%=form.text_field :place %>
+</div>
+
+<div class="field">
+    <%=form.label :direccion %>
+    <%=form.text_field :address %>
+</div>
+
+<div class="field">
+	<%=form.label :Fecha_de_inicio %>
+	<%=date_field :event, :datestart %>
+	
+</div>
+
+<div class="field">
+    <%=form.label :Fecha_de_finalización %>
+    <%=date_field :event, :datefinish %>
+</div>
+
+<div class="field">
+    <%=form.label :Tipo %>
+    <%=select_tag :type, raw('<option></option value="0"><option value="1">Virtual</option><option value="2">Presencial</option>') %>
+</div>
+
+<div class="field">
+    <%=form.submit 'Crear Evento'%>
+</div>
+
+</div>
+<%end%>
